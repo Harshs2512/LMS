@@ -9,10 +9,10 @@ const courseSchema = mongoose.Schema({
         type: Number,
         required: [true, "Please Enter Selling Price"]
     },
-    // discounted_price: {
-    //     type: Number,
-    //     required: [true, "Please Enter Discounted Price"]
-    // },
+    discounted_price: {
+        type: Number,
+        required: [true, "Please Enter Discounted Price"]
+    },
     // category: {
     //     type: String,
     //     required: [true, "Please Enter Category"]
