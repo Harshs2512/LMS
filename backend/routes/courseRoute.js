@@ -7,5 +7,6 @@ const router = express.Router();
 router.route("/courses").get(getAllCourses);
 router.route("/course/new").post(createCourse);
 router.route("/course/:id").put(createCourse);
+router.route("/course/:id").put(addStudent);
 
 module.exports = router
