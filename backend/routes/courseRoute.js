@@ -8,7 +8,6 @@ router.route("/courses").get(getAllCourses);
 router.route("/course/new").post(createCourse);
 router.route("/course/:id").put(createCourse);
 router.route("/course/:id").put(addStudent);
-router.route("/course/:id").put(addStudent);
-router.route("/course/:id").put(suresh);
 
 module.exports = router
+
