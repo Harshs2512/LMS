@@ -1,4 +1,5 @@
 const Course = require("../models/courseModel");
+const { param } = require("../routes/courseRoute");
 // const del = require("sample_mflix")
 
 
@@ -23,50 +24,31 @@ exports.getAllCourses = async (req, res) => {
 
 
 // Update Course
-exports.updateCourse = async (req, res, next) => {
+exports.updateCourse = async (req, res) => {
 
-    let course = await Course.findById(req.params.id);
-    console.log(course)
+    let course = await Course.updateOne(
+        {
+            _id: req.params.id
+        },
+        {
+            $set: req.body
+        }
+    )
+    res.send(course)
 
-    if (!course) {
-        return res.status(500).json({
-            success: false,
-            message: "Course not found"
+    // if (!course) {
+    //     return res.status(500).json({
+    //         success: false,
+    //         message: "Course not found"
+    //     })
+    // }
+};
+//delete code
+exports.deleteCourse = async (req, res) => {
+    const result = await Course.deleteOne(
+        {
+            _id: req.params.id
         })
-    }
-    course = await Course.findByIdAndUpdate(req.params.id, res.body, {
-        new: true,
-        runValidators: true,
-        useFindAndModify: false
-    });
-    res.status(200).json({
-        success: true,
-        course,
-    })
-    console.log(course)
-}
+        res.send(result);
 
-exports.deleteCourse = async (req, res, next) => {
-
-    const course = await Course.findById(req.params.id);
-    console.log(course)
-
-    if (!course) {
-        return res.status(500).json({
-            success: false,
-            message: "Course not found"
-        })
-    }
-    // delete Course
-    // await Course.remove();
-    console.log(course)
-
-    await deleteMany({title: "apple"})
-
-
-    res.status(200).json({
-        success: true,
-        message: "Course deleted"
-    })
-    console.log(course)
-}
+};
