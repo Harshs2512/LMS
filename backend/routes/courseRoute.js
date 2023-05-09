@@ -15,4 +15,3 @@ router.route("/course/:id").put(addStudent);
 // jjgjgjgjgg
 
 module.exports = router
-

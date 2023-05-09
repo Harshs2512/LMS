@@ -19,6 +19,7 @@ exports.getAllCourses = async (req, res) => {
     })
 }
 
+
 // Update Course
 exports.updateCourse = async (req, res, next) => {
 
