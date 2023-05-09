@@ -1,9 +1,17 @@
-const express = require('express');
+
+
+const express = require("express");
+require("dotenv").config();
+require("./db");
+
+const courseRoute = require("./routes/courseRoute");
+
 const app = express();
+app.use(express.json());
 
 
-const course = require('./routes/courseRoute');
+app.use("/api/v1",courseRoute);
 
-app.use("/api/v1", course);
-
-module.exports = app
+app.listen(8000, () => {
+    console.log("the port is listening on port 8000");
+});

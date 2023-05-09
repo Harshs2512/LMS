@@ -17,26 +17,26 @@ const courseSchema = mongoose.Schema({
         type: String,
         required: [true, "Please Enter Category"]
     },
-    // rating: {
-    //     type: Number,
-    //     default: 0,
-    // },
-    // duration: {
-    //     type: Number,
-    //     default: 0,
-    // },
-    // thumnail_img: [
-    //     {
-    //         public_id: {
-    //             type: String,
-    //             require: true
-    //         },
-    //         url: {
-    //             type: String,
-    //             require: true
-    //         }
-    //     }
-    // ],
+    rating: {
+        type: Number,
+        default: 0,
+    },
+    duration: {
+        type: Number,
+        default: 0,
+    },
+    thumnail_img: [
+        {
+            public_id: {
+                type: String,
+                require: true
+            },
+            url: {
+                type: String,
+                require: true
+            }
+        }
+    ],
 })
 
 
