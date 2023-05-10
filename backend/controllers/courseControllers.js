@@ -58,10 +58,10 @@ exports.deleteCourse = async (req, res, next) => {
         })
     }
     // delete Course
-    // await Course.remove();
+    await course.remove({ course });
     console.log(course)
 
-    await deleteMany({title: "apple"})
+    // await deleteMany({ title: "apple" })
 
 
     res.status(200).json({
