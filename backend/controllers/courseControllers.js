@@ -52,7 +52,24 @@ exports.deleteCourse = async (req, res) => {
     // await Course.remove();
     console.log(course)
 
-    await deleteMany({title: "apple"})
 
-
+    //get All Course Details
+exports.getCourseDetails = async (req, res,next) => {
+    const result = await Course.findById(
+        {
+            _id: req.params.id
+        });
+        
+        // if (!result) {
+        //         return res.status(500).json({
+        //             success: false,
+        //             message: "Course not found"
+        //         })
+        //     }
+        //     res.status(200).json({
+        //         success: true,
+        //         result
+        //     })
+        //     res.send(result)
 };
+
