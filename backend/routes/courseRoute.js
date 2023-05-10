@@ -4,7 +4,7 @@ const { getAllCourses, createCourse, updateCourse, deleteCourse } = require("../
 const router = express.Router();
 
 
-router.route("/courses").get(getAllCourses);
+router.route("/courses").post(getAllCourses);
 router.route("/course/new").post(createCourse);
 router.route("/course/:id").put(updateCourse).delete(deleteCourse);
 
