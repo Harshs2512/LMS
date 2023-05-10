@@ -21,8 +21,6 @@ exports.getAllCourses = async (req, res) => {
         courses
     })
 }
-
-
 // Update Course
 exports.updateCourse = async (req, res) => {
 
@@ -49,17 +47,16 @@ exports.deleteCourse = async (req, res) => {
         {
             _id: req.params.id
         })
+    }
+    // delete Course
+    // await Course.remove();
+    console.log(course)
+
+    await deleteMany({title: "apple"})
+
+
     res.status(200).json({
         success: true,
         message: "Course deleted"
     })
-    // console.log(course)
-}
-    // delete Course
-    // await Course.remove();
-    // console.log(course)
-
-    // await deleteMany({title: "apple"})
-
-
-// hhghghghghgh
+    console.log(course)
