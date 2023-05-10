@@ -50,7 +50,7 @@ exports.deleteCourse = async (req, res) => {
     }
     // delete Course
     // await Course.remove();
-    console.log(course)
+    // console.log(course)
 
 
     //get All Course Details
