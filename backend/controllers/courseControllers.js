@@ -77,7 +77,7 @@ exports.createCategory = async (req, res, next) => {
     category,
   });
 };
-// Gshow all  cetegory name
+// show all  cetegory name
 exports.getAllCategory = async (req, res) => {
   const category = await Category.find();
   res.status(200).json({

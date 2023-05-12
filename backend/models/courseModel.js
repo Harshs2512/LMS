@@ -13,8 +13,9 @@ const courseSchema = mongoose.Schema({
         type: Number,
         required: [true, "Please Enter Discounted Price"]
     },
-    category: {
-        type: String,
+    categoryId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Category",
         required: [true, "Please Enter Category"]
     },
     rating: {
@@ -41,4 +42,4 @@ const courseSchema = mongoose.Schema({
 
 
 
-module.exports = mongoose.model("Course", courseSchema);
+module.exports =mongoose.model("Course", courseSchema);
