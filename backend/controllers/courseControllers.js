@@ -41,14 +41,15 @@ exports.updateCourse = async (req, res) => {
 };
 //delete code
 exports.deleteCourse = async (req, res) => {
-  const result = await Course.deleteOne({
-    _id: req.params.id,
-  });
+    const result = await Course.deleteOne(
+        {
+            _id: req.params.id
+        })
+    }
+    // delete Course
+    // await Course.remove();
+    console.log(course)
 
-  // delete Course
-  // await Course.remove();
-  console.log(result);
-};
 
 //get All Course Details
 exports.getCourseDetails = async (req, res, next) => {
@@ -68,40 +69,4 @@ exports.getCourseDetails = async (req, res, next) => {
   //     })
   //     res.send(result)
 };
-//for add category
 
-exports.createCategory = async (req, res, next) => {
-  const category = await Category.create(req.body);
-  res.status(201).json({
-    success: true,
-    category,
-  });
-};
-// Gshow all  cetegory name
-exports.getAllCategory = async (req, res) => {
-  const category = await Category.find();
-  res.status(200).json({
-    success: true,
-    category,
-  });
-};
-
-// Update Category
-exports.updateCategory = async (req, res) => {
-  let category = await Category.updateOne(
-    {
-      _id: req.params.id,
-    },
-    {
-      $set: req.body,
-    }
-  );
-  res.send(category);
-};
-//delete  category
-exports.deleteCategory = async (req, res) => {
-  const result = await Category.deleteOne({
-    _id: req.params.id,
-  });
-  res.send(result); 
-};
