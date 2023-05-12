@@ -10,7 +10,8 @@ const lessonSchema = mongoose.Schema({
         required: [true, "Please Enter Category"]
     },
     courseId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Course",
         required: [true, "Please Enter Category"]
     },
     thumnail_img: [{

@@ -56,7 +56,7 @@ exports.getCourseDetails = async (req, res, next) => {
     const result = await Course.findById({
         _id: req.params.id,
     });
-
+    res.send(result);
     // if (!result) {
     //         return res.status(500).json({
     //             success: false,
@@ -67,7 +67,6 @@ exports.getCourseDetails = async (req, res, next) => {
     //         success: true,
     //         result
     //     })
-    //     res.send(result)
 };
 //for add category
 
@@ -78,7 +77,7 @@ exports.createCategory = async (req, res, next) => {
         category,
     });
 };
-// Gshow all  cetegory name
+// show all  cetegory name
 exports.getAllCategory = async (req, res) => {
     const category = await Category.find();
     res.status(200).json({
@@ -142,5 +141,15 @@ exports.deleteLesson = async (req, res) => {
     const lesson = await Lesson.deleteOne({
         _id: req.params.id,
     });
+    res.send(lesson);
+};
+
+
+//Get lesson details with Course details code write here
+
+exports.LessonDetail = async (req, res) => {
+    const lesson = await Lesson.find({
+        _id: req.body.courseId,
+    }).populate("courseId");
     res.send(lesson);
 };
