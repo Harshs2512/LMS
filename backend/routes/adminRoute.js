@@ -14,7 +14,7 @@ const router = express.Router();
 
 
 //router.route("/course").get(getAllCourses);
-router.route("/register").post(registerAdmin);
+router.route("/admin/register").post(registerAdmin);
 
 // router.route("/admin/login").post(loginAdmin);
 
