@@ -1,7 +1,7 @@
 const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("./catchAsyncErrors");
 const jwt = require("jsonwebtoken");
-const User = require("../models/adminModel");
+const Admin = require("../models/adminModel");
 
 
 
@@ -27,7 +27,7 @@ exports.isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
 
     const decodedData = jwt.verify(token, process.env.JWT_SECRET);
 
-    req.user = await User.findById(decodedData.id);
+    req.user = await Admin.findById(decodedData.id);
 
     next();
 });
